@@ -24,10 +24,10 @@ Includes support for Gemma 3 Nano models with optimized MediaPipe GenAI v0.10.24
   s.platform = :ios, '16.0'
 
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 
-    'DEFINES_MODULE' => 'YES', 
+  s.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES',
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
-    'OTHER_LDFLAGS' => '-force_load $(SRCROOT)/Pods/TensorFlowLiteSelectTfOps/Frameworks/TensorFlowLiteSelectTfOps.xcframework/ios-arm64/TensorFlowLiteSelectTfOps.framework/TensorFlowLiteSelectTfOps'
+    'OTHER_LDFLAGS' => '$(inherited) -force_load $(PODS_XCFRAMEWORKS_BUILD_DIR)/TensorFlowLiteSelectTfOps/TensorFlowLiteSelectTfOps.framework/TensorFlowLiteSelectTfOps'
   }
   s.swift_version = '5.0'
 end
